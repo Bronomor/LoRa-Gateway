@@ -1,3 +1,6 @@
 [submodule "Svetovid-raspberry-client"]
 	path = Svetovid-raspberry-client
 	url = https://github.com/AVSystem/Svetovid-raspberry-client.git
+[submodule "Example/usr/local/share/svetovid/bin/fsdm/lwm2m-registry"]
+	path = Example/usr/local/share/svetovid/bin/fsdm/lwm2m-registry
+	url = https://github.com/Bronomor/lwm2m-registry.git
