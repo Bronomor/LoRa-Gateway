@@ -1,0 +1,32 @@
+#!/usr/bin/env python3
+# -*- encoding: utf-8 -*-
+
+from fsdm import ResourceHandler, CoapError, DataType, KvStore
+
+
+class ResourceHandler_3_20(ResourceHandler):
+    NAME = "Battery Status"
+    DESCRIPTION = '''\
+This value is only valid for the Device Internal Battery if present
+ * (one Available Power Sources Resource Instance value is 1). Battery
+ * Status  Meaning Description 0       Normal  The battery is operating
+ * normally and not on power. 1       Charging        The battery is
+ * currently charging. 2       Charge Complete The battery is fully
+ * charged and still on power. 3       Damaged The battery has some
+ * problem. 4       Low Battery     The battery is low on charge. 5
+ * Not Installed   The battery is not installed. 6       Unknown The
+ * battery information is not available.'''
+    DATATYPE = DataType.INTEGER
+    EXTERNAL_NOTIFY = False
+
+    def read(self,
+             instance_id,            # int
+             resource_instance_id):  # int for multiple resources, None otherwise
+        # TODO: print value to stdout
+        print(0)
+
+
+
+
+if __name__ == '__main__':
+    ResourceHandler_3_20().main()

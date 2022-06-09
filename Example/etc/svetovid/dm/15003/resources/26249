@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+# -*- encoding: utf-8 -*-
+
+from fsdm import ResourceHandler, CoapError, DataType, KvStore
+
+
+class ResourceHandler_15003_26249(ResourceHandler):
+    NAME = "Down port"
+    DESCRIPTION = '''Defines port for down-link communication.'''
+    DATATYPE = DataType.INTEGER
+    EXTERNAL_NOTIFY = False
+
+    def read(self,
+             instance_id,            # int
+             resource_instance_id):  # int for multiple resources, None otherwise
+        print(0)
+
+    def write(self,
+              instance_id,            # int
+              resource_instance_id):  # int for multiple resources, None otherwise
+        pass
+
+
+if __name__ == '__main__':
+    ResourceHandler_15003_26249().main()

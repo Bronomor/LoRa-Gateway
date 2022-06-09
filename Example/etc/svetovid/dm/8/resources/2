@@ -1,0 +1,29 @@
+#!/usr/bin/env python3
+# -*- encoding: utf-8 -*-
+
+from fsdm import ResourceHandler, CoapError, DataType, KvStore
+
+
+class ResourceHandler_8_2(ResourceHandler):
+    NAME = "Wipe item"
+    DESCRIPTION = '''\
+Indicates which data can be wiped from the device. This resource could
+ * be e.g. representing a directory.'''
+    DATATYPE = DataType.STRING
+    EXTERNAL_NOTIFY = False
+
+    def read(self,
+             instance_id,            # int
+             resource_instance_id):  # int for multiple resources, None otherwise
+        # TODO: print value to stdout
+        print("TODO")
+
+
+    def list(self,
+             instance_id):  # int
+        # TODO: print space-separated list of available Resource Instance IDs
+        raise CoapError.NOT_IMPLEMENTED
+
+
+if __name__ == '__main__':
+    ResourceHandler_8_2().main()

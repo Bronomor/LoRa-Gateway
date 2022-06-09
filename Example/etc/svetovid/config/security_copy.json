@@ -1,0 +1,14 @@
+{
+    "1":
+    {
+        "ssid": "1",
+        "server_uri": "coaps://try-anjay.avsystem.com:5684",
+        "is_bootstrap": "0",
+        "security_mode": "psk",
+        "pubkey_or_identity_hex": "4238323745422d30303030303030303234303036613461",
+        "privkey_or_psk_hex": "## replace it with your PSK ##",
+        "server_pubkey_hex": "",
+        "holdoff_s": "0",
+        "bs_timeout_s": "0"
+    }
+}

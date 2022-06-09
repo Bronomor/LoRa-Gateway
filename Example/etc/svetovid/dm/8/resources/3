@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+# -*- encoding: utf-8 -*-
+
+from fsdm import ResourceHandler, CoapError, DataType, KvStore
+
+
+class ResourceHandler_8_3(ResourceHandler):
+    NAME = "Wipe"
+    DESCRIPTION = '''\
+To permanently erase data from the device.'''
+
+    def execute(self,
+                instance_id,  # int
+                args):        # int -> (str or None)
+        # TODO: implement
+        raise CoapError.NOT_IMPLEMENTED
+
+
+
+if __name__ == '__main__':
+    ResourceHandler_8_3().main()

@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+# -*- encoding: utf-8 -*-
+
+from fsdm import ResourceHandler, CoapError, DataType, KvStore
+
+
+class ResourceHandler_3_19(ResourceHandler):
+    NAME = "Software Version"
+    DESCRIPTION = '''\
+Current software version of the device (manufacturer specified
+ * string). On elaborated LwM2M device, SW could be split in 2 parts: a
+ * firmware one and a higher level software on top. Both pieces of
+ * Software are together managed by LwM2M Firmware Update Object (Object
+ * ID 5)'''
+    DATATYPE = DataType.STRING
+    EXTERNAL_NOTIFY = False
+
+    def read(self,
+             instance_id,            # int
+             resource_instance_id):  # int for multiple resources, None otherwise
+        # TODO: print value to stdout
+        print("TODO")
+
+
+
+
+if __name__ == '__main__':
+    ResourceHandler_3_19().main()

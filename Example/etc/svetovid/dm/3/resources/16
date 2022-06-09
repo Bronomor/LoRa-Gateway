@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+# -*- encoding: utf-8 -*-
+
+from fsdm import ResourceHandler, CoapError, DataType, KvStore
+
+
+class ResourceHandler_3_16(ResourceHandler):
+    NAME = "Supported Binding and Modes"
+    DESCRIPTION = '''\
+Indicates which bindings and modes are supported in the LwM2M Client.
+ * The possible values are those listed in the LwM2M Core Specification.'''
+    DATATYPE = DataType.STRING
+    EXTERNAL_NOTIFY = False
+
+    def read(self,
+             instance_id,            # int
+             resource_instance_id):  # int for multiple resources, None otherwise
+        # TODO: print value to stdout
+        print("TODO")
+
+
+
+
+if __name__ == '__main__':
+    ResourceHandler_3_16().main()

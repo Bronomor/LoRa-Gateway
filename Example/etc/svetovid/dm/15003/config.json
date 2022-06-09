@@ -1,0 +1,4 @@
+{
+ "CONFIG_PATH": "/home/admin/workspace/LoRaPacketForwarder/config.json",
+ "PACKET_STATS": "/home/admin/workspace/LoRaPacketForwarder/packetsStats.json"
+}

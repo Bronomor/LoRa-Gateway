@@ -1,0 +1,39 @@
+#!/usr/bin/env python3
+# -*- encoding: utf-8 -*-
+
+from fsdm import ResourceHandler, CoapError, DataType, KvStore
+
+
+class ResourceHandler_3_13(ResourceHandler):
+    NAME = "Current Time"
+    DESCRIPTION = '''\
+Current UNIX time of the LwM2M Client. The LwM2M Client should be
+ * responsible to increase this time value as every second elapses. The
+ * LwM2M Server is able to write this Resource to make the LwM2M Client
+ * synchronized with the LwM2M Server.'''
+    DATATYPE = DataType.TIME
+    EXTERNAL_NOTIFY = False
+
+    def read(self,
+             instance_id,            # int
+             resource_instance_id):  # int for multiple resources, None otherwise
+        # TODO: print value to stdout
+        print(0)
+
+
+    def write(self,
+              instance_id,            # int
+              resource_instance_id):  # int for multiple resources, None otherwise
+        # TODO: read value from stdin
+        raise CoapError.NOT_IMPLEMENTED
+
+    def reset(self,
+              instance_id):  # int
+        # TODO: reset resource to its original state. You can either set it to
+        # a default value or delete the resource.
+        pass
+
+
+
+if __name__ == '__main__':
+    ResourceHandler_3_13().main()

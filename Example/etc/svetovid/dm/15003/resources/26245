@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+# -*- encoding: utf-8 -*-
+
+from fsdm import ResourceHandler, CoapError, DataType, KvStore
+import os
+
+
+class ResourceHandler_15003_26245(ResourceHandler):
+    NAME = "Gateway EUI"
+    DESCRIPTION = '''EUI ID of LoRa Gateway'''
+    DATATYPE = DataType.STRING
+    EXTERNAL_NOTIFY = False
+
+    def read(self,
+             instance_id,            # int
+             resource_instance_id):  # int for multiple resources, None otherwise
+
+       cmd_string = os.popen('ifconfig wlan0').read().split('\n')
+       pos_start = cmd_string[3].find("ether")
+       pos_end = cmd_string[3].find("txque")
+       eud_id = cmd_string[3][pos_start+6:pos_start+15] + "ff:ff" + cmd_string[3][pos_end-11:pos_end-2]
+       print(eud_id)
+
+if __name__ == '__main__':
+    ResourceHandler_15003_26245().main()

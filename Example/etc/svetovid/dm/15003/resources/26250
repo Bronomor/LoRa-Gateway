@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+# -*- encoding: utf-8 -*-
+
+from fsdm import ResourceHandler, CoapError, DataType, KvStore
+import json
+import sys
+
+
+class ResourceHandler_15003_26250(ResourceHandler):
+    NAME = "Up port"
+    DESCRIPTION = '''Defines port for up-link communication.'''
+    DATATYPE = DataType.INTEGER
+    EXTERNAL_NOTIFY = False
+
+    def read(self,
+             instance_id,            # int
+             resource_instance_id):  # int for multiple resources, None otherwise
+        with open("/etc/svetovid/dm/15003/config.json", "r") as configFile:
+            file = json.load(configFile)
+            path = file["CONFIG_PATH"]
+        with open(path, "r") as loRaConfig:
+            config = json.load(loRaConfig)
+            print(config["servers"][1]["port"])
+
+    def write(self,
+              instance_id,            # int
+              resource_instance_id):  # int for multiple resources, None otherwise
+        with open("/etc/svetovid/dm/15003/config.json", "r") as configFile:
+           file = json.load(configFile)
+           path = file["CONFIG_PATH"]
+        with open(path, "r") as loRaConfig:
+           config = json.load(loRaConfig)
+           config["servers"][1]["port"] = int(sys.stdin.read())
+        with open(path, "w") as jsonFile:
+           json.dump(config, jsonFile)
+
+if __name__ == '__main__':
+    ResourceHandler_15003_26250().main()

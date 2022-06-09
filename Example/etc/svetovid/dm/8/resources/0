@@ -1,0 +1,40 @@
+#!/usr/bin/env python3
+# -*- encoding: utf-8 -*-
+
+from fsdm import ResourceHandler, CoapError, DataType, KvStore
+
+
+class ResourceHandler_8_0(ResourceHandler):
+    NAME = "State"
+    DESCRIPTION = '''\
+State of the device: 0: unlocked state Normal operation. 1: partially
+ * locked state To render the device inoperable the device has been
+ * partially locked. The "lock target" resource allows specifying the
+ * target(s) for this operation. 2: fully locked state To render the
+ * device fully inoperable the device has been fully locked.'''
+    DATATYPE = DataType.INTEGER
+    EXTERNAL_NOTIFY = False
+
+    def read(self,
+             instance_id,            # int
+             resource_instance_id):  # int for multiple resources, None otherwise
+        # TODO: print value to stdout
+        print(0)
+
+
+    def write(self,
+              instance_id,            # int
+              resource_instance_id):  # int for multiple resources, None otherwise
+        # TODO: read value from stdin
+        raise CoapError.NOT_IMPLEMENTED
+
+    def reset(self,
+              instance_id):  # int
+        # TODO: reset resource to its original state. You can either set it to
+        # a default value or delete the resource.
+        pass
+
+
+
+if __name__ == '__main__':
+    ResourceHandler_8_0().main()

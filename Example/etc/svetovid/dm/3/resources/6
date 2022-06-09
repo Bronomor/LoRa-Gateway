@@ -1,0 +1,32 @@
+#!/usr/bin/env python3
+# -*- encoding: utf-8 -*-
+
+from fsdm import ResourceHandler, CoapError, DataType, KvStore
+
+
+class ResourceHandler_3_6(ResourceHandler):
+    NAME = "Available Power Sources"
+    DESCRIPTION = '''\
+0: DC power 1: Internal Battery 2: External Battery 3: Fuel Cell 4:
+ * Power over Ethernet 5: USB 6: AC (Mains) power 7: Solar The same
+ * Resource Instance ID MUST be used to associate a given Power Source
+ * (Resource ID:6) with its Present Voltage (Resource ID:7) and its
+ * Present Current (Resource ID:8)'''
+    DATATYPE = DataType.INTEGER
+    EXTERNAL_NOTIFY = False
+
+    def read(self,
+             instance_id,            # int
+             resource_instance_id):  # int for multiple resources, None otherwise
+        # TODO: print value to stdout
+        print(0)
+
+
+    def list(self,
+             instance_id):  # int
+        # TODO: print space-separated list of available Resource Instance IDs
+        #raise CoapError.NOT_IMPLEMENTED
+        print("0 1 2 3")
+
+if __name__ == '__main__':
+    ResourceHandler_3_6().main()

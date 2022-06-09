@@ -1,0 +1,14 @@
+{
+    "1":
+    {
+        "ssid": "1",
+        "server_uri": "coaps://lwm2m-test.avsystem.io:5684",
+        "is_bootstrap": "0",
+        "security_mode": "psk",
+        "pubkey_or_identity_hex": "616768",
+        "privkey_or_psk_hex": "616768",
+        "server_pubkey_hex": "",
+        "holdoff_s": "0",
+        "bs_timeout_s": "0"
+    }
+}

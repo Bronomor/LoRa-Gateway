@@ -1,0 +1,34 @@
+#!/usr/bin/env python3
+# -*- encoding: utf-8 -*-
+
+from fsdm import ResourceHandler, CoapError, DataType, KvStore
+
+
+class ResourceHandler_8_1(ResourceHandler):
+    NAME = "Lock target"
+    DESCRIPTION = '''\
+To specify one or several targets for the lock operation. This allows
+ * partially locking the device by selecting specific components or
+ * interfaces to be locked.'''
+    DATATYPE = DataType.STRING
+
+    def write(self,
+              instance_id,            # int
+              resource_instance_id):  # int for multiple resources, None otherwise
+        # TODO: read value from stdin
+        #raise CoapError.NOT_IMPLEMENTED
+        pass
+    def reset(self,
+              instance_id):  # int
+        # TODO: reset resource to its original state. You can either clear it to
+        # have 0 resource instances or delete the resource altogether.
+        #raise CoapError.NOT_IMPLEMENTED
+        pass
+    def list(self,
+             instance_id):  # int
+        # TODO: print space-separated list of available Resource Instance IDs
+        #raise CoapError.NOT_IMPLEMENTED
+        print("0")
+
+if __name__ == '__main__':
+    ResourceHandler_8_1().main()

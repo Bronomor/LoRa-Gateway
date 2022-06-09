@@ -1,0 +1,19 @@
+{
+	"device": {
+	"endpoint_name": "LoRa-Gateway",
+	"udp_listen_port": 1234
+	},
+	"logging": {
+	"default_log_level": "trace",
+	"log_level": {
+		"svd": "trace"
+	}
+	},
+	"lwm2m_version_config": {
+	"min": "1.0",
+	"max": "1.1"
+	},
+	"in_buffer_size_b": 1024,
+	"out_buffer_size_b": 1024,
+	"msg_cache_size_b": 65536
+}

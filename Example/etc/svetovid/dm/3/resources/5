@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+# -*- encoding: utf-8 -*-
+
+from fsdm import ResourceHandler, CoapError, DataType, KvStore
+
+
+class ResourceHandler_3_5(ResourceHandler):
+    NAME = "Factory Reset"
+    DESCRIPTION = '''\
+Perform factory reset of the LwM2M Device to make the LwM2M Device to
+ * go through initial deployment sequence where provisioning and
+ * bootstrap sequence is performed. This requires client ensuring post
+ * factory reset to have minimal information to allow it to carry out one
+ * of the bootstrap methods specified in section 5.2.3.  When this
+ * Resource is executed, "De-register" operation MAY be sent to the LwM2M
+ * Server(s) before factory reset of the LwM2M Device.'''
+
+    def execute(self,
+                instance_id,  # int
+                args):        # int -> (str or None)
+        # TODO: implement
+        raise CoapError.NOT_IMPLEMENTED
+
+
+
+if __name__ == '__main__':
+    ResourceHandler_3_5().main()

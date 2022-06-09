@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+# -*- encoding: utf-8 -*-
+
+from fsdm import ResourceHandler, CoapError, DataType, KvStore
+
+
+class ResourceHandler_3_2(ResourceHandler):
+    NAME = "Serial Number"
+    DESCRIPTION = '''\
+Serial Number'''
+    DATATYPE = DataType.STRING
+    EXTERNAL_NOTIFY = False
+
+    def read(self,
+             instance_id,            # int
+             resource_instance_id):  # int for multiple resources, None otherwise
+        print("0000000024006a4a")
+
+
+
+
+if __name__ == '__main__':
+    ResourceHandler_3_2().main()

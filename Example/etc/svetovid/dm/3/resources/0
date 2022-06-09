@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+# -*- encoding: utf-8 -*-
+
+from fsdm import ResourceHandler, CoapError, DataType, KvStore
+
+
+class ResourceHandler_3_0(ResourceHandler):
+    NAME = "Manufacturer"
+    DESCRIPTION = '''\
+Human readable manufacturer name'''
+    DATATYPE = DataType.STRING
+    EXTERNAL_NOTIFY = False
+
+    def read(self,
+             instance_id,            # int
+             resource_instance_id):  # int for multiple resources, None otherwise
+        print("Raspberry Pi Foundation")
+
+
+
+
+if __name__ == '__main__':
+    ResourceHandler_3_0().main()

@@ -1,0 +1,39 @@
+#!/usr/bin/env python3
+# -*- encoding: utf-8 -*-
+
+from fsdm import ResourceHandler, CoapError, DataType, KvStore
+import json
+import sys
+
+
+class ResourceHandler_15003_26252(ResourceHandler):
+    NAME = "Bandwidth"
+    DESCRIPTION = '''The maximum amount of data transmitted in a given amount of time.'''
+    DATATYPE = DataType.FLOAT
+    EXTERNAL_NOTIFY = False
+
+    def read(self,
+             instance_id,            # int
+             resource_instance_id):  # int for multiple resources, None otherwise
+        with open("/etc/svetovid/dm/15003/config.json", "r") as configFile:
+            file = json.load(configFile)
+            path = file["CONFIG_PATH"]
+        with open(path, "r") as loRaConfig:
+            config = json.load(loRaConfig)
+            print(config["bandwidth_khz"])
+
+    def write(self,
+              instance_id,            # int
+              resource_instance_id):  # int for multiple resources, None otherwise
+        with open("/etc/svetovid/dm/15003/config.json", "r") as configFile:
+            file = json.load(configFile)
+            path = file["CONFIG_PATH"]
+        with open(path, "r") as loRaConfig:
+            config = json.load(loRaConfig)
+            config["bandwidth_khz"] = float(sys.stdin.read())
+        with open(path, "w") as jsonFile:
+            json.dump(config, jsonFile)
+
+
+if __name__ == '__main__':
+    ResourceHandler_15003_26252().main()

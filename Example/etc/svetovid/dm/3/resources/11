@@ -1,0 +1,44 @@
+#!/usr/bin/env python3
+# -*- encoding: utf-8 -*-
+
+from fsdm import ResourceHandler, CoapError, DataType, KvStore
+
+
+class ResourceHandler_3_11(ResourceHandler):
+    NAME = "Error Code"
+    DESCRIPTION = '''\
+0=No error 1=Low battery power 2=External power supply off 3=GPS
+ * module failure 4=Low received signal strength 5=Out of memory 6=SMS
+ * failure 7=IP connectivity failure 8=Peripheral malfunction
+ * 9..15=Reserved for future use 16..32=Device specific error codes  When
+ * the single Device Object Instance is initiated, there is only one
+ * error code Resource Instance whose value is equal to 0 that means no
+ * error. When the first error happens, the LwM2M Client changes error
+ * code Resource Instance to any non-zero value to indicate the error
+ * type. When any other error happens, a new error code Resource Instance
+ * is created. When an error associated with a Resource Instance is no
+ * longer present, that Resource Instance is deleted. When the single
+ * existing error is no longer present, the LwM2M Client returns to the
+ * original no error state where Instance 0 has value 0. This error code
+ * Resource MAY be observed by the LwM2M Server. How to deal with LwM2M
+ * Client’s error report depends on the policy of the LwM2M Server. Error
+ * codes in between 16 and 32 are specific to the Device and may have
+ * different meanings among implementations.'''
+    DATATYPE = DataType.INTEGER
+    EXTERNAL_NOTIFY = False
+
+    def read(self,
+             instance_id,            # int
+             resource_instance_id):  # int for multiple resources, None otherwise
+        # TODO: print value to stdout
+        print(0)
+
+
+    def list(self,
+             instance_id):  # int
+        # TODO: print space-separated list of available Resource Instance IDs
+        #raise CoapError.NOT_IMPLEMENTED
+        print("0")
+
+if __name__ == '__main__':
+    ResourceHandler_3_11().main()

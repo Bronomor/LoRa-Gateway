@@ -1,0 +1,24 @@
+#!/usr/bin/env python3
+# -*- encoding: utf-8 -*-
+
+from fsdm import ResourceHandler, CoapError, DataType, KvStore
+
+
+class ResourceHandler_3_12(ResourceHandler):
+    NAME = "Reset Error Code"
+    DESCRIPTION = '''\
+Delete all error code Resource Instances and create only one zero-
+ * value error code that implies no error, then re-evaluate all error
+ * conditions and update and create Resources Instances to capture all
+ * current error conditions.'''
+
+    def execute(self,
+                instance_id,  # int
+                args):        # int -> (str or None)
+        # TODO: implement
+        raise CoapError.NOT_IMPLEMENTED
+
+
+
+if __name__ == '__main__':
+    ResourceHandler_3_12().main()

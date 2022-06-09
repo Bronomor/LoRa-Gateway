@@ -1,0 +1,32 @@
+#!/usr/bin/env python3
+# -*- encoding: utf-8 -*-
+
+from fsdm import ResourceHandler, CoapError, DataType, KvStore
+
+
+class ResourceHandler_3_22(ResourceHandler):
+    NAME = "ExtDevInfo"
+    DESCRIPTION = '''\
+Reference to external "Device" object instance containing information.
+ * For example, such an external device can be a Host Device, which is a
+ * device into which the Device containing the LwM2M client is embedded.
+ * This Resource may be used to retrieve information about the Host
+ * Device.'''
+    DATATYPE = DataType.OBJLNK
+    EXTERNAL_NOTIFY = False
+
+    def read(self,
+             instance_id,            # int
+             resource_instance_id):  # int for multiple resources, None otherwise
+        # TODO: print value to stdout
+        print("0:0")
+
+
+    def list(self,
+             instance_id):  # int
+        # TODO: print space-separated list of available Resource Instance IDs
+        raise CoapError.NOT_IMPLEMENTED
+
+
+if __name__ == '__main__':
+    ResourceHandler_3_22().main()

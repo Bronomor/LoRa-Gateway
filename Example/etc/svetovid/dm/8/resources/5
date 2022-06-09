@@ -1,0 +1,29 @@
+#!/usr/bin/env python3
+# -*- encoding: utf-8 -*-
+
+from fsdm import ResourceHandler, CoapError, DataType, KvStore
+
+
+class ResourceHandler_8_5(ResourceHandler):
+    NAME = "Lock or Wipe Operation Result"
+    DESCRIPTION = '''\
+Contains the result of a lock and wipe operation 0: Default 1:
+ * Partially Lock operation successful 2: Fully Lock operation successful
+ * 3: Unlock operation successful 4: Wipe operation successful 5:
+ * Partially Lock operation failed 6: Fully Lock operation failed 7:
+ * Unlock operation failed  8: Wipe operation failed This Resource MAY be
+ * reported by sending Observe operation.'''
+    DATATYPE = DataType.INTEGER
+    EXTERNAL_NOTIFY = False
+
+    def read(self,
+             instance_id,            # int
+             resource_instance_id):  # int for multiple resources, None otherwise
+        # TODO: print value to stdout
+        print(0)
+
+
+
+
+if __name__ == '__main__':
+    ResourceHandler_8_5().main()
