@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M.xsd">
+	<Object ObjectType="MODefinition">
+		<Name>Gateway</Name>
+		<Description1><![CDATA[Configure your gate with the LwM2M facility.]]></Description1>
+		<ObjectID>15003</ObjectID>
+		<ObjectURN></ObjectURN>
+		<LWM2MVersion>1.0</LWM2MVersion>
+		<ObjectVersion>1.0</ObjectVersion>
+		<MultipleInstances>Multiple</MultipleInstances>
+		<Mandatory>Optional</Mandatory>
+		<Resources>
+			<Item ID="26242">
+				<Name>Gateway ID</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description>Unique gateway ID.</Description>
+			</Item>
+			<Item ID="26243">
+				<Name>Channel plan</Name>
+				<Operations>RW</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>String</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description>Frequency plans for various regions.</Description>
+			</Item>
+            <Item ID="26244">
+				<Name>Channel frequency</Name>
+				<Operations>RW</Operations>
+				<MultipleInstances>Multiple</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description>Defines radio frequency for each of 8 channels</Description>
+			</Item>
+			<Item ID="26245">
+				<Name>Gateway EUI</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>String</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description>EUI ID of LoRa Gateway</Description>
+			</Item>
+			<Item ID="26246">
+				<Name>Packets RX</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description>Number of LoRa packets received from device.</Description>
+			</Item>
+            <Item ID="26247">
+				<Name>Packets TX</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description>Number of LoRa packets transmitted to device.</Description>
+			</Item>
+			<Item ID="26248">
+				<Name>Server address</Name>
+				<Operations>RW</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>String</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description>Defines LoRaWAN Network server address.</Description>
+			</Item>
+			<Item ID="26249">
+				<Name>Down port</Name>
+				<Operations>RW</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description>Defines port for down-link communication.</Description>
+			</Item>
+			<Item ID="26250">
+				<Name>Up port</Name>
+				<Operations>RW</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description>Defines port for up-link communication.</Description>
+			</Item>
+            <Item ID="26251">
+				<Name>Spreading Factor</Name>
+				<Operations>RW</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description>The spreading factor controls the chirp rate,
+					and thus controls the speed of data transmission.
+					Lower spreading factors mean faster chirps
+					and therefore a higher data transmission rate.</Description>
+			</Item>
+            <Item ID="26252">
+				<Name>Bandwidth</Name>
+				<Operations>RW</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description>The maximum amount of data transmitted in a given amount of time.</Description>
+			</Item>
+		</Resources>
+		<Description2><![CDATA[]]></Description2>
+	</Object>
+</LWM2M>
+
+
