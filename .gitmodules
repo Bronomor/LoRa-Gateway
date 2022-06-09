@@ -1,9 +1,3 @@
-[submodule "lwm2m-registry"]
-	path = lwm2m-registry
-	url = https://github.com/Bronomor/lwm2m-registry.git
 [submodule "Svetovid-raspberry-client"]
 	path = Svetovid-raspberry-client
 	url = https://github.com/AVSystem/Svetovid-raspberry-client.git
-[submodule "LoRaPacketForwarder"]
-	path = LoRaPacketForwarder
-	url = https://github.com/zhgzhg/LoRaPacketForwarder.git
