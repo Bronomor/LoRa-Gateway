@@ -30,7 +30,7 @@
 				<Units></Units>
 				<Description>Frequency plans for various regions.</Description>
 			</Item>
-            <Item ID="26244">
+                        <Item ID="26244">
 				<Name>Channel frequency</Name>
 				<Operations>RW</Operations>
 				<MultipleInstances>Multiple</MultipleInstances>
@@ -60,7 +60,7 @@
 				<Units></Units>
 				<Description>Number of LoRa packets received from device.</Description>
 			</Item>
-            <Item ID="26247">
+                        <Item ID="26247">
 				<Name>Packets TX</Name>
 				<Operations>R</Operations>
 				<MultipleInstances>Single</MultipleInstances>
@@ -100,8 +100,8 @@
 				<Units></Units>
 				<Description>Defines port for up-link communication.</Description>
 			</Item>
-            <Item ID="26251">
-				<Name>Spreading Factor</Name>
+                        <Item ID="26251">
+	 			<Name>Spreading Factor</Name>
 				<Operations>RW</Operations>
 				<MultipleInstances>Single</MultipleInstances>
 				<Mandatory>Mandatory</Mandatory>
@@ -113,7 +113,7 @@
 					Lower spreading factors mean faster chirps
 					and therefore a higher data transmission rate.</Description>
 			</Item>
-            <Item ID="26252">
+                        <Item ID="26252">
 				<Name>Bandwidth</Name>
 				<Operations>RW</Operations>
 				<MultipleInstances>Single</MultipleInstances>
