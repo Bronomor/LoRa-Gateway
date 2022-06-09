@@ -4,3 +4,6 @@
 [submodule "Example/usr/local/share/svetovid/bin/fsdm/lwm2m-registry"]
 	path = Example/usr/local/share/svetovid/bin/fsdm/lwm2m-registry
 	url = https://github.com/Bronomor/lwm2m-registry.git
+[submodule "Example/home/admin/workspace/LoRaPacketForwarder"]
+	path = Example/home/admin/workspace/LoRaPacketForwarder
+	url = https://github.com/Bronomor/LoRaPacketForwarder.git
