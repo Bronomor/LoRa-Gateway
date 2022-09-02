@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
+	<Object ObjectType="MODefinition">
+		<Name>LoRaMessage</Name>
+		<Description1><![CDATA[Object to handling uplink and downlink messages]]></Description1>
+		<ObjectID>15015</ObjectID>
+		<ObjectURN></ObjectURN>
+		<LWM2MVersion>1.1</LWM2MVersion>
+		<ObjectVersion>1.0</ObjectVersion>
+		<MultipleInstances>Single</MultipleInstances>
+		<Mandatory>Optional</Mandatory>
+		<Resources>
+			<Item ID="0">
+				<Name>Uplink</Name>
+				<Operations></Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>String</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Receive uplink message]]></Description>
+			</Item>
+			<Item ID="1">
+				<Name>Downlink</Name>
+				<Operations></Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>String</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Handle downlink message]]></Description>
+			</Item>
+		</Resources>
+		<Description2 />
+	</Object>
+</LWM2M>
