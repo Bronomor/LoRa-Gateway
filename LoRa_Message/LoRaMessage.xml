@@ -12,20 +12,20 @@
 		<Resources>
 			<Item ID="0">
 				<Name>Uplink</Name>
-				<Operations></Operations>
+				<Operations>R</Operations>
 				<MultipleInstances>Single</MultipleInstances>
 				<Mandatory>Mandatory</Mandatory>
-				<Type>String</Type>
+				<Type>Opaque</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
 				<Description><![CDATA[Receive uplink message]]></Description>
 			</Item>
 			<Item ID="1">
 				<Name>Downlink</Name>
-				<Operations></Operations>
+				<Operations>R</Operations>
 				<MultipleInstances>Single</MultipleInstances>
 				<Mandatory>Mandatory</Mandatory>
-				<Type>String</Type>
+				<Type>Opaque</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
 				<Description><![CDATA[Handle downlink message]]></Description>
